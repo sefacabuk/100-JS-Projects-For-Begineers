@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: inline-flex;
+}
+
+.key {
+    border: 1px solid;
+    margin: 10px;
+    padding: 10px;
+    font-size: 18px;
+    position: relative;
+    min-width: 150px;
+    text-align: center;
+}
+
+.key small {
+    position: absolute;
+    margin-top: -35px;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    color: #555;
+}

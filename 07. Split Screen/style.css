@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+
+.split {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+}
+
+h2 {
+    color: #fff;
+    font-size: 58px;
+    position: absolute;
+    white-space: nowrap;
+    left: 50%;
+    top: 30%;
+    transform: translateX(-50%);
+}
+
+button {
+    border: none;
+    font-size: 16px;
+    background: #fff;
+    color: #000;
+    width: 120px;
+    height: 50px;
+    border-radius: 2px;
+    padding: 8px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+
+.split.left {
+    left: 0;
+    background-image: url('./marvel1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
+/* .split:hover {
+    width: 80%;
+    transform: width 0.3s ease-in;
+} */
+
+.split.left button:hover {
+    background: rgb(135, 121, 218, 1);
+    color: #fff;
+    transition: 0.2s ease-in;
+    border: #fff solid;
+}
+
+.split.left::before {
+    content: '';
+    background-color: rgb(135, 121, 218, 0.4);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.split.right {
+    right: 0;
+    background-image: url('./DC.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
+.split.right button:hover {
+    background-color: rgba(43, 43, 43, 1);
+    color: #fff;
+    transition: 0.2s ease-in;
+    border: #fff solid;
+}
+
+.split.right::before {
+    content: '';
+    background-color: rgba(43, 43, 43, 0.6);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+/*Animation*/
+.active-left .left {
+    width: 75%;
+}
+
+.active-left .right {
+    width: 25%;
+}
+
+.active-right .left {
+    width: 25%;
+}
+
+.active-right .right {
+    width: 75%;
+}
+
+.split.left,
+.split.left::before,
+.split.right,
+.split.right::before {
+    transition: all 1000ms ease-in-out;
+}

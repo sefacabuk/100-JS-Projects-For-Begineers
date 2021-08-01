@@ -1,0 +1,137 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #3f3b3b;
+    height: 100vh;
+    overflow-x: hidden;
+    color: black;
+}
+
+h1 {
+    font-size: 52px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    text-align: center;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+p {
+    margin: 15px auto;
+    line-height: 1.5;
+}
+
+.container {
+    background-color: #fdfdfd;
+    margin: 0 auto;
+    width: 100vw;
+    min-height: 100vh;
+    padding: 20px;
+    transition: transform 0.5s linear;
+    transform-origin: top left;
+}
+
+.container.show-nav {
+    transform-origin: top left;
+    transform: rotate(-20deg);
+    transition: transform 0.5s linear;
+}
+
+.circle-container {
+    top: -100px;
+    left: -100px;
+    position: fixed;
+}
+
+.circle {
+    height: 200px;
+    width: 200px;
+    background: blueviolet;
+    border-radius: 50%;
+    position: relative;
+    transition: transform 0.5s linear;
+}
+
+.container.show-nav .circle {
+    transform: rotate(-70deg);
+}
+
+.circle button {
+    position: absolute;
+    cursor: pointer;
+    top: 50%;
+    left: 50%;
+    font-size: 26px;
+    height: 100px;
+    background: transparent;
+    border: none;
+}
+
+.circle .open {
+    left: 60%;
+    color: #fff;
+}
+
+.circle .close {
+    color: #fff;
+    top: 60%;
+    transform-origin: top left;
+    transform: rotate(90deg);
+}
+
+.content .row {
+    display: flex;
+    justify-content: center;
+}
+
+.content img {
+    max-width: 600px;
+
+}
+
+.content {
+    max-width: 1000px;
+    margin: 5px auto;
+}
+
+nav {
+    position: fixed;
+    bottom: 40px;
+    left: 0;
+    cursor: pointer;
+}
+
+nav ul li {
+    color: #fff;
+    list-style-type: none;
+    transform: translateX(-100%);
+    transition: transform 0.5s linear;
+}
+
+.container.show-nav+nav li {
+    transform: translateX(0);
+    transition-delay: 0.3s;
+}
+
+nav ul li i {
+    font-size: 22px;
+    color: #fff;
+    margin: 10px;
+}
+
+nav ul li+li {
+    margin-left: 15px;
+    transform: translateX(-150%);
+}
+
+nav ul li+li+li {
+    margin-left: 30px;
+    transform: translateX(-200%);
+}

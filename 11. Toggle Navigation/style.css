@@ -1,0 +1,100 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    background-color: #fff;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.faq-container {
+    flex-direction: column;
+    max-width: 600px;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+}
+
+.faq {
+    margin: 30px auto;
+    border: 1px solid #000;
+    padding: 30px;
+    border-radius: 10px;
+    position: relative;
+    transition: .7s ease-in-out;
+    box-shadow: 0 6px 6px rgb(10 16 20 / 15%),
+        0 0 52px rgb(10 16 20 / 12%);
+}
+
+.faq.active {
+    background: #fff;
+}
+
+.faq.active::before {
+    content: "\f086";
+    font-family: "Font Awesome 5 Free";
+    position: absolute;
+    top: -10px;
+    left: 0;
+    font-size: 5rem;
+    opacity: 0.2;
+    z-index: 0;
+    color: green;
+}
+
+.faq-title {
+    font-size: 18px;
+    margin: 0 35px 0 0;
+    display: flex;
+}
+
+.faq-text {
+    margin: 10px 0;
+    display: none;
+}
+
+.faq.active .faq-text {
+    display: block;
+}
+
+button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.toggle-btn {
+    border: 0;
+    top: 30px;
+    right: 30px;
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    padding: 0;
+}
+
+.toggle-btn .fas {
+    padding: 5px;
+    color: #000;
+    border-radius: 50px;
+    font-size: 16px;
+    transform: rotate(-45deg);
+    transition: 0.3s ease-in-out;
+}
+
+
+.faq.active .toggle-btn .fa-times {
+    display: block;
+    transform: rotate(-0deg);
+    transition: 0.3s ease-in-out;
+}
