@@ -1,12 +1,17 @@
-const API_URL = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=b1a3ef54a79f01d7d05b28e1a9b2658c&page=1'
+const API_URL = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=b1a3ef54a79f01d7d05b28e1a9b2658c&page='
 const IMAGE_PATH = 'https://image.tmdb.org/t/p/w500'
 const SEARCH_URL = 'https://api.themoviedb.org/3/search/movie?api_key=b1a3ef54a79f01d7d05b28e1a9b2658c&query="'
 
 const form = document.getElementById("form");
 const search = document.getElementById("search");
 const main = document.getElementById("main");
+const next = document.getElementById("next");
+const prev = document.getElementById("prev");
+prev.disabled = true
 
-getMovies(API_URL);
+let num = 1;
+
+getMovies(API_URL + num);
 
 async function getMovies(url) {
     const res = await fetch(url);
@@ -63,5 +68,20 @@ form.addEventListener('submit', (e) => {
         search.value = "";
     } else {
         window.location.reload()
+    }
+})
+
+next.addEventListener("click", function () {
+    num += 1;
+    prev.disabled = false
+    getMovies(API_URL + num);
+})
+
+prev.addEventListener("click", function () {
+    if (num > 1) {
+        num -= 1;
+        getMovies(API_URL + num);
+    } else {
+        prev.disabled = true
     }
 })
